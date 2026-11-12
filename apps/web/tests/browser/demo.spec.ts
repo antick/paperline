@@ -31,7 +31,7 @@ test('demo links share the repository and banner dismissal survives navigation a
     .getByRole('link', { name: 'Paperline on GitHub' });
   await expect(banner).toContainText('Paperline is a free Astro blog template.');
   for (const link of [banner.getByRole('link', { name: 'Get it on GitHub' }), repository]) {
-    await expect(link).toHaveAttribute('href', 'https://github.com/antick/astro-paperline');
+    await expect(link).toHaveAttribute('href', 'https://github.com/antick/paperline');
     await expect(link).toBeVisible();
   }
   await page.evaluate(() => window.scrollTo(0, 500));
@@ -80,7 +80,7 @@ test('the template link works without JavaScript and has no inactive dismiss but
     const banner = page.getByRole('complementary', { name: 'About this template' });
     await expect(banner.getByRole('link', { name: 'Get it on GitHub' })).toHaveAttribute(
       'href',
-      'https://github.com/antick/astro-paperline'
+      'https://github.com/antick/paperline'
     );
     await expect(page.locator('.demo-banner-dismiss')).toBeHidden();
   } finally {

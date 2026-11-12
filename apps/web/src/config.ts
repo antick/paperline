@@ -10,7 +10,7 @@ export const SITE: Site = {
 };
 
 export const TEMPLATE_DEMO = {
-  repositoryUrl: 'https://github.com/antick/astro-paperline',
+  repositoryUrl: 'https://github.com/antick/paperline',
   repositoryLabel: 'Paperline on GitHub',
   bannerLabel: 'About this template',
   message: 'Paperline is a free Astro blog template.',

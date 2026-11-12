@@ -40,8 +40,8 @@ An open-source Astro blog theme with an editorial layout, thoughtful typography,
 Use **Node.js 24 LTS** (24.21.0 or newer within 24.x) and **Bun 1.4.2**. The exact Node version is pinned in [`.nvmrc`](.nvmrc) and shared with the GitHub workflow. With nvm installed:
 
 ```bash
-git clone https://github.com/antick/astro-paperline.git
-cd astro-paperline
+git clone https://github.com/antick/paperline.git
+cd paperline
 nvm install
 nvm use
 bun install --frozen-lockfile
@@ -118,8 +118,8 @@ bun run test:scenarios
 
 For browser tests, install the browsers once from `apps/web` with `bunx --no-install playwright install chromium firefox webkit`, then run `bun run test:browser` from the repository root after building. These local checks cover Chromium, Firefox, and WebKit, including mobile layouts. To keep CI usage low, the [GitHub workflow](.github/workflows/check.yml) runs only formatting, lint, type checks, and a dependency audit; it does not build the site or run tests.
 
-Found a bug or have an idea? [Open an issue](https://github.com/antick/astro-paperline/issues). Contributions are welcome; run the checks above before opening a pull request.
+Found a bug or have an idea? [Open an issue](https://github.com/antick/paperline/issues). Contributions are welcome; run the checks above before opening a pull request.
 
 ## License
 
-[MIT](LICENSE). Made with ♥ by [Sanam](https://sanam.id/) · [GitHub](https://github.com/antick).
+[MIT](LICENSE). Made with ♥ by [Potion](https://potion.sh/) · [GitHub](https://github.com/antick).

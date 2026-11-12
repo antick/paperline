@@ -8,7 +8,10 @@ import { CREATOR } from '@data/creator';
 import '../styles/about.css';
 ---
 
-<Layout title="About" desc="Meet Paperline, an open-source Astro theme made with love by Sanam.">
+<Layout
+  title="About"
+  desc={`Meet Paperline, an open-source Astro theme made with love by ${CREATOR.name}.`}
+>
   <Container>
     <PageTitle>
       <Fragment slot="title">A little room for your ideas.</Fragment>
@@ -37,9 +40,9 @@ import '../styles/about.css';
         <p>{CREATOR.bio}</p>
         <p>
           Paperline is one of my open-source projects. You can find more of my work on GitHub, or
-          visit my personal site for projects, notes, and things I’m exploring.
+          visit Potion, my blog, for notes and things I’m exploring.
         </p>
-        <ul class="about-links" aria-label="Find Sanam online">
+        <ul class="about-links" aria-label={`Find ${CREATOR.name} online`}>
           {CREATOR.links.map(({ label, href }) => (
             <li>
               <a href={href} rel="author">
