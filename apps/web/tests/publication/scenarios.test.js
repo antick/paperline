@@ -83,7 +83,7 @@ test('publication owners can remove the demo banner and repository link through 
   for (const route of ['index.html', 'published-fixture/index.html', '404.html']) {
     const html = site.read(`dist/${route}`);
     expect(html).not.toContain('id="demo-banner"');
-    expect(html).not.toContain('href="https://github.com/antick/astro-paperline"');
+    expect(html).not.toContain('href="https://github.com/antick/paperline"');
     expect(html).toContain('id="theme-btn"');
   }
 }, 120_000);

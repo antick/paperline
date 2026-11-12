@@ -2,8 +2,6 @@
 
 An open-source Astro blog theme with an editorial layout, thoughtful typography, and a warm paper-inspired palette.
 
-[Live demo](https://paperline.potion.sh)
-
 ![Full Paperline homepage in light mode, from navigation through stories to the footer](.github/screenshots/home-light.jpg)
 
 <details>
@@ -37,11 +35,11 @@ An open-source Astro blog theme with an editorial layout, thoughtful typography,
 
 ## Get started
 
-Use **Node.js 24 LTS** (24.21.0 or newer within 24.x) and **Bun 1.4.2**. The exact Node version is pinned in [`.nvmrc`](.nvmrc) and shared with the GitHub workflow. With nvm installed:
+Use **Node.js 26 LTS** (26.13.0 or newer within 26.x) and **Bun 1.4.4**. The exact Node version is pinned in [`.nvmrc`](.nvmrc) and shared with the GitHub workflow. With nvm installed:
 
 ```bash
-git clone https://github.com/antick/astro-paperline.git
-cd astro-paperline
+git clone https://github.com/antick/paperline.git
+cd paperline
 nvm install
 nvm use
 bun install --frozen-lockfile
@@ -84,7 +82,7 @@ The site lives in `apps/web/`. Start with these files:
 | Fonts and theme colors                           | [`src/styles/typography.css`](apps/web/src/styles/typography.css) and [`src/styles/base.css`](apps/web/src/styles/base.css) |
 | About, Contact, and other pages                  | [`src/pages/`](apps/web/src/pages/)                                                                                         |
 
-Set `SITE.website` to your own domain before deploying. Replace the fictional sample posts, update the author details, and add your logo, favicon, and social image. Theme attribution is configured separately in [`src/data/creator.ts`](apps/web/src/data/creator.ts).
+The template uses `https://example.com/` as a placeholder. Set `SITE.website` to your own domain before deploying. Replace the fictional sample posts, update the author details, and add your logo, favicon, and social image. Theme attribution is configured separately in [`src/data/creator.ts`](apps/web/src/data/creator.ts).
 
 The demo banner and header GitHub link are optional. Turn off `features.demoBanner` and/or `features.repositoryLink` in `src/settings.ts` to remove them. Their copy and shared repository URL live in `TEMPLATE_DEMO` in `src/config.ts`. Dismissing the banner hides it for the current browser tab, including navigation and reloads.
 
@@ -103,7 +101,9 @@ bun run preview
 
 Deploy **`apps/web/dist/`** to your static host. Use `bun install --frozen-lockfile` as the install command and `bun run build` as the build command. Keep the host's normal 404 handling rather than rewriting missing URLs to the homepage.
 
-For Vercel, import the repository with its root directory unchanged; `vercel.json` supplies the build settings and disables Git deployments and PR previews. Production deploys run only when a stable GitHub release is published or via manual `workflow_dispatch` in [`.github/workflows/vercel-production.yml`](.github/workflows/vercel-production.yml).
+Deployment is paused. The site source remains in `apps/web/` for local use and future hosting. There is no deployment workflow, and `vercel.json` disables Git deployments and PR previews. If you choose to host it later, configure your domain and deployment separately.
+
+TypeScript 7 checks the TypeScript and React files with `tsc`. Astro component checks and ESLint use the TypeScript 6 compatibility API through the pinned `typescript` alias; `typescript-native` supplies the version 7 compiler. Path aliases are relative to the project configuration, without the removed `baseUrl` option.
 
 ## Development checks
 
@@ -118,8 +118,8 @@ bun run test:scenarios
 
 For browser tests, install the browsers once from `apps/web` with `bunx --no-install playwright install chromium firefox webkit`, then run `bun run test:browser` from the repository root after building. These local checks cover Chromium, Firefox, and WebKit, including mobile layouts. To keep CI usage low, the [GitHub workflow](.github/workflows/check.yml) runs only formatting, lint, type checks, and a dependency audit; it does not build the site or run tests.
 
-Found a bug or have an idea? [Open an issue](https://github.com/antick/astro-paperline/issues). Contributions are welcome; run the checks above before opening a pull request.
+Found a bug or have an idea? [Open an issue](https://github.com/antick/paperline/issues). Contributions are welcome; run the checks above before opening a pull request.
 
 ## License
 
-[MIT](LICENSE). Made with ♥ by [Sanam](https://sanam.id/) · [GitHub](https://github.com/antick).
+[MIT](LICENSE). Made with ♥ by [Potion](https://potion.sh/) · [GitHub](https://github.com/antick).
