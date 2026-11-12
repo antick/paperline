@@ -2,7 +2,7 @@ import { BLOG_PLACEHOLDER_PUBLIC_PATH } from './constants/images';
 import type { Site } from './types';
 
 export const SITE: Site = {
-  website: 'https://paperline.potion.sh/',
+  website: 'https://example.com/',
   author: 'Paperline',
   desc: 'An open-source Astro theme for thoughtful writing, with sample stories, typography, and original illustrations.',
   title: 'Paperline',
