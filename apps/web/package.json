@@ -7,10 +7,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro check && astro build",
+    "build": "bun run check && astro build",
     "preview": "astro preview",
     "sync": "astro sync",
-    "check": "astro sync && astro check",
+    "check": "astro sync && tsc --noEmit && astro check",
     "lint": "eslint . --max-warnings 0",
     "astro": "astro",
     "assets:brand": "bun scripts/generate-brand-assets.ts",
@@ -46,7 +46,8 @@
     "react": "19.3.0",
     "react-dom": "19.3.0",
     "sharp": "0.35.5",
-    "typescript": "6.0.3",
-    "@playwright/test": "1.63.0"
+    "typescript": "npm:@typescript/typescript6@6.0.2",
+    "@playwright/test": "1.63.0",
+    "typescript-native": "npm:typescript@7.0.2"
   }
 }

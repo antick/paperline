@@ -35,7 +35,7 @@ An open-source Astro blog theme with an editorial layout, thoughtful typography,
 
 ## Get started
 
-Use **Node.js 24 LTS** (24.21.0 or newer within 24.x) and **Bun 1.4.2**. The exact Node version is pinned in [`.nvmrc`](.nvmrc) and shared with the GitHub workflow. With nvm installed:
+Use **Node.js 26 LTS** (26.13.0 or newer within 26.x) and **Bun 1.4.4**. The exact Node version is pinned in [`.nvmrc`](.nvmrc) and shared with the GitHub workflow. With nvm installed:
 
 ```bash
 git clone https://github.com/antick/paperline.git
@@ -102,6 +102,8 @@ bun run preview
 Deploy **`apps/web/dist/`** to your static host. Use `bun install --frozen-lockfile` as the install command and `bun run build` as the build command. Keep the host's normal 404 handling rather than rewriting missing URLs to the homepage.
 
 Deployment is paused. The site source remains in `apps/web/` for local use and future hosting. There is no deployment workflow, and `vercel.json` disables Git deployments and PR previews. If you choose to host it later, configure your domain and deployment separately.
+
+TypeScript 7 checks the TypeScript and React files with `tsc`. Astro component checks and ESLint use the TypeScript 6 compatibility API through the pinned `typescript` alias; `typescript-native` supplies the version 7 compiler. Path aliases are relative to the project configuration, without the removed `baseUrl` option.
 
 ## Development checks
 
