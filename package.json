@@ -51,8 +51,8 @@
     "node": "^26.13.0"
   },
   "overrides": {
-    "postcss-selector-parser": "7.1.6",
+    "postcss-selector-parser": "7.2.0",
     "fast-xml-parser": "5.12.0",
-    "minimatch": ">=11.0.1 <11.1.0"
+    "minimatch": "11.0.5"
   }
 }
